@@ -4,9 +4,9 @@ phases:
   install:
     commands:
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket 492b
-                                   --output-template-file Helloworld.yaml
+                                   --output-template-file Helloworld.yml
 artifacts:
   type: zip
   files:
-    - Helloworld
+    - Helloworld.yml
 
