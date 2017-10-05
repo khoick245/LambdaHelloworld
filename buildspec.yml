@@ -13,8 +13,8 @@ phases:
       - echo Build started on `date`
       - mvn install
 artifacts:
-  type: zip
+  type: jar
   files:
     - Helloworld.yml
-    - Helloworld.zip
+    - Helloworld.jar
   discard-paths: yes
