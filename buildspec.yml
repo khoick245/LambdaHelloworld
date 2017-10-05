@@ -5,8 +5,16 @@ phases:
     commands:
       - aws cloudformation package --template-file samTemplate.yaml --s3-bucket 492b
                                    --output-template-file Helloworld.yml
+      - apt-get update -y
+      - apt-get install -y maven
+  build:
+    commands:
+      - echo Entered the build phase...
+      - echo Build started on `date`
+      - mvn install
 artifacts:
   type: zip
   files:
     - Helloworld.yml
-
+    - Helloworld.zip
+  discard-paths: yes
