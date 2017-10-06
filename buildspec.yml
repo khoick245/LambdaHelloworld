@@ -15,5 +15,5 @@ artifacts:
   type: jar
   files:
     - Helloworld.yml
-    - Helloworld.jar
+    - HelloworldFunctionHandler.jar
   discard-paths: yes
