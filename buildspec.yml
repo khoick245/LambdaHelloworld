@@ -3,8 +3,8 @@ version: 0.1
 phases:
   install:
     commands:
-      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket bucket-name 
-                                   --output-template-file Helloworld.yaml
+      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket 492b 
+                                   --output-template-file Helloworld.yml
   build:
     commands:
       - echo Build started on `date`
