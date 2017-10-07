@@ -1,6 +1,6 @@
 
 version: 0.1
-
+ 
 phases:
   build:
     commands:
@@ -9,7 +9,7 @@ phases:
       - mvn package shade:shade
       - mv target/HelloWorld-1.0.jar .
       - rm -rf target src buildspec.yml pom.xml
-      - aws cloudformation package --template samTemplate.yaml --s3-bucket 492b --output-template Helloworld.yml
+      - aws cloudformation package --template samTemplate.yaml --s3-bucket $492b --output-template Helloworld.yml
 artifacts:
   files:
     - target/HelloWorld-1.0.jar
