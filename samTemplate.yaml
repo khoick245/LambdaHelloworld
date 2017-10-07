@@ -8,7 +8,7 @@ Resources:
     Properties:
       Handler: helloworld.HelloworldFunctionHandler.handleRequest
       Runtime: java8
-      CodeUri: ./hello
+      CodeUri: ./
       Events:
         MyTimeApi:
           Type: Api
