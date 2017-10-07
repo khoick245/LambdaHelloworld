@@ -6,8 +6,8 @@ phases:
     commands:
       - echo Entering build phase...
       - echo Build started on `date`
-      - mvn package shade:shade
-      - mv target/HelloWorld-1.0.jar
+      - mvn package
+      - mv target/HelloWorld-1.0.jar .
       - rm -rf target src buildspec.yml pom.xml
       - aws cloudformation package --template samTemplate.yaml --s3-bucket $492b --output-template Helloworld.yml
 artifacts:
