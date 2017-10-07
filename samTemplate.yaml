@@ -1,27 +1,17 @@
-    AWSTemplateFormatVersion: '2010-09-09'
-    Transform: AWS::Serverless-2016-10-31
-    Description: Outputs the time
 
-    Parameters:
-      SourceBucket:
-        Type: String
-        Description: S3 bucket name for the CodeBuild artifact
-      SourceArtifact:
-        Type: String
-        Description: S3 object key for the CodeBuild artifact
-
-    Resources:
-      TimeFunction:
-        Type: AWS::Serverless::Function
-        Properties:
-          Handler: helloworld.HelloworldFunctionHandler::handleRequest
-          Runtime: java8
-          CodeUri:
-             Bucket: !Ref SourceBucket
-             Key: !Ref SourceArtifact
-          Events:
-            MyTimeApi:
-              Type: Api
-              Properties:
-                Path: /TimeResource
-                Method: GET
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Hello world
+Resources:
+  Helloworld:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: helloworld.HelloworldFunctionHandler.handleRequest
+      Runtime: java8
+      CodeUri: ./hello
+      Events:
+        MyTimeApi:
+          Type: Api
+          Properties:
+            Path: /helloworld
+            Method: GET

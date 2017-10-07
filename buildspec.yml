@@ -7,23 +7,13 @@ phases:
                                    --output-template-file Helloworld.yml
   build:
     commands:
-      - echo Build started on date
-      - gradle build clean
-      - gradle test
+      - echo Build started on `date`
+      - mvn test
   post_build:
     commands:
-      - echo Build started on date
-      - gradle build
-      - mkdir -p deploy
-      - cp -r build/classes/main/* deploy/
-      - cp NewSamTemplate.yaml deploy/
-      - cp -r build/libs deploy/
-      - ls -ltr deploy
-      - ls -ltr build
-      - echo Build completed on date
-      - echo Build is complete
+      - echo Build completed on `date`
+      - mvn package
 artifacts:
-  type : zip
+  type: zip
   files:
-    - '**/*'
-  base-directory : 'deploy'
+    - '**.*'
