@@ -6,9 +6,9 @@ Resources:
   Helloworld:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: ./src/main/java/helloworld/HelloworldFunctionHandler.java
+      Handler: helloworld.HelloworldFunctionHandler
       Runtime: java8
-      CodeUri: ./
+      CodeUri: HelloWorld-1.0.jar
       Events:
         MyTimeApi:
           Type: Api

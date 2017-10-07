@@ -1,11 +1,15 @@
 
-version: 0.1
 phases:
-  install:
+  build:
     commands:
-      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket 492b
-                                   --output-template-file Helloworld.yml
+      - echo Entering build phase...
+      - echo Build started on `date`
+      - mvn package
+      - mv target/HelloWorld-1.0.jar .
+      - unzip HelloWorld-1.0.jar
+      - rm -rf target src buildspec.yml pom.xml HelloWorld-1.0.jar
+      - aws cloudformation package --template samTemplate.yaml --s3-bucket 492b --output-template Helloworld.yml
 artifacts:
-  type: zip
   files:
+    - target/HelloWorld-1.0.jar
     - Helloworld.yml
