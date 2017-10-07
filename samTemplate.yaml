@@ -6,7 +6,7 @@ Resources:
   Helloworld:
     Type: AWS::Serverless::Function
     Properties:
-      Handler: helloworld.HelloworldFunctionHandler
+      Handler: ./src/main/java/helloworld/HelloworldFunctionHandler.java
       Runtime: java8
       CodeUri: ./
       Events:
